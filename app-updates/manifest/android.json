@@ -1,0 +1,14 @@
+{
+  "versions": {
+    "0.0.14": {
+      "version": "0.0.14",
+      "description": "版本 0.0.14 更新",
+      "updateType": "apk_required",
+      "apk_required": {
+        "size": 49001712,
+        "downloadUrl": "http://101.37.68.177/versions/0.0.14/apk/app-release.apk",
+        "hash": "sha256:a66c1869902b4cbbf27d24b2b7b52f492ef940477ac54923b43337c9ce4eba10"
+      }
+    }
+  }
+}

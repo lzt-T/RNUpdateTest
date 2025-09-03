@@ -72,6 +72,21 @@ def enableProguardInReleaseBuilds = false
  */
 def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 
+// 定义获取 versionName 的函数
+def getVersionName() {
+   
+    def versionPropsFile = file('../../package.json')
+    if (versionPropsFile.exists()) {
+        def json = new groovy.json.JsonSlurper().parseText(versionPropsFile.text)
+        def versionName = json.version
+        return versionName
+    } else {
+        throw new GradleException("package.json not found!")
+    }
+}
+
+def resultVersionName=getVersionName()
+
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -83,7 +98,8 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        // 使用 package.json 中的版本号
+        versionName resultVersionName
     }
     signingConfigs {
         debug {
@@ -103,6 +119,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            debuggable true
         }
     }
 }
