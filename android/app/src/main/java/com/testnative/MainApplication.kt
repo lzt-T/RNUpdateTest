@@ -85,8 +85,8 @@ class MainApplication : Application(), ReactApplication {
       val versionName = packageInfo.versionName
       var fullVersion = "0.0.0"
       Log.d("AppInfo", "app Version Name: $versionName")
-      val bundlePath = "${filesDir}/rnupdate/bundle/index.android.bundle"
-      val bundleVersionPath= "${filesDir}/rnupdate/bundle/version.json"
+      val bundlePath = "${filesDir}/ota-updates/index.android.bundle"
+      val bundleVersionPath= "${filesDir}/ota-updates/version.json"
       val bundleFile = File(bundlePath)
       // 全量更新版本内容
       val bundleVersionFile = File(bundleVersionPath)

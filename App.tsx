@@ -135,7 +135,7 @@ function App() {
       <Button
         title="测试安装APK"
         onPress={() => {
-          const testApkPath = `${RNFS.DocumentDirectoryPath}/app-update.apk`;
+          const testApkPath = `${RNFS.DocumentDirectoryPath}/apk-updates/app-update.apk`;
 
           console.log(testApkPath, 'testApkPath');
 
