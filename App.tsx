@@ -61,7 +61,6 @@ function App() {
       updateServerUrl: 'http://101.37.68.177',
       appVersion: packageJson.version,
       autoCheck: false,
-      maxRetries: 3,
       onCheckComplete: (isTrue, updateInfo) => {
         console.log('更新信息:', updateInfo);
       },
