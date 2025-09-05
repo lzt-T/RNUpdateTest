@@ -28,6 +28,7 @@ function App() {
   const [isUpdating, setIsUpdating] = useState(false);
   const UpdateScreen = useRef<any>(null);
 
+  // 检查更新
   const checkForUpdate = async () => {
     setIsChecking(true);
     try {
@@ -45,6 +46,7 @@ function App() {
     }
   };
 
+  // 安装更新
   const onInstallUpdate = async () => {
     setIsUpdating(true);
     try {
@@ -61,9 +63,11 @@ function App() {
       updateServerUrl: 'https://xjoker.top',
       appVersion: packageJson.version,
       autoCheck: false,
+      // 检查更新完成
       onCheckComplete: (isTrue, updateInfo) => {
         console.log('更新信息:', updateInfo);
       },
+      // OTA更新完成
       onFullUpdateComplete: updateInfo => {
         Alert.alert(
           '更新完成',
@@ -81,6 +85,7 @@ function App() {
           ],
         );
       },
+      // APK更新完成
       onApkDownloadComplete: (updateInfo, apkFilePath) => {
         Alert.alert('更新包已准备好', '是否立即安装？', [
           { text: '稍后' },
@@ -100,9 +105,11 @@ function App() {
           },
         ]);
       },
+      // 进度回调
       onProgress: progress => {
         console.log('progress', progress);
       },
+      // 错误回调
       onError: error => {
         console.log('error', error);
 
