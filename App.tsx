@@ -58,7 +58,7 @@ function App() {
 
   useEffect(() => {
     UpdateScreen.current = new UpdateManager({
-      updateServerUrl: 'http://101.37.68.177',
+      updateServerUrl: 'https://xjoker.top',
       appVersion: packageJson.version,
       autoCheck: false,
       onCheckComplete: (isTrue, updateInfo) => {

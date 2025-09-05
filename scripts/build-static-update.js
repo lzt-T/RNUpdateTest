@@ -19,7 +19,7 @@ for (const arg of args) {
 const packageJson = require('../package.json');
 const config = {
   version: process.env.APP_VERSION || packageJson.version,
-  baseUrl: process.env.BASE_URL || 'http://101.37.68.177',
+  baseUrl: process.env.BASE_URL || 'https://xjoker.top',
   outputDir: './app-updates',
   tempDir: './temp-bundles', // 临时目录，用完即删
   platforms: ['android', 'ios'],
